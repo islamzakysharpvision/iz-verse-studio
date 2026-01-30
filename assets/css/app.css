@@ -1,0 +1,164 @@
+/* ======================================================
+   BASE
+   ====================================================== */
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,sans-serif;
+  background:#050505;
+  color:#c9ccd6;
+}
+
+/* ======================================================
+   NAVBAR
+   ====================================================== */
+
+.main-nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+
+  background:rgba(0,0,0,.4);
+  backdrop-filter:blur(20px);
+
+  transition:transform .35s ease;
+}
+
+.main-nav.nav-hidden{
+  transform:translateY(-100%);
+}
+
+.nav-inner{
+  max-width:1400px;
+  margin:auto;
+  padding:14px 24px;
+
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+}
+
+/* logo */
+
+.brand img{
+  height:36px;
+  display:block;
+}
+
+/* links */
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  justify-content:center;
+  gap:28px;
+  margin:0;
+  padding:0;
+}
+
+.nav-links a{
+  color:#c9ccd6;
+  text-decoration:none;
+  font-size:14px;
+  letter-spacing:.3px;
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:#ffffff;
+  text-shadow:0 0 8px rgba(90,160,255,.6);
+  transform:scale(1.06);
+}
+
+/* desktop – NO burger */
+
+.mobile-burger{
+  display:none;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* ======================================================
+   MOBILE
+   ====================================================== */
+
+.mobile-menu{
+  display:none;
+  position:fixed;
+  top:64px;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,.95);
+  backdrop-filter:blur(18px);
+  z-index:999;
+
+  flex-direction:column;
+  padding:20px;
+}
+
+.mobile-menu a{
+  padding:12px 0;
+  color:#fff;
+  text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.mobile-menu.show{
+  display:flex;
+}
+
+/* secondary utilities bar */
+
+.mobile-utilities{
+  position:fixed;
+  top:64px;
+  left:0;
+  width:100%;
+  display:none;
+
+  justify-content:center;
+  gap:14px;
+
+  padding:10px 14px;
+  background:rgba(0,0,0,.2);
+  backdrop-filter:blur(10px);
+  z-index:998;
+}
+
+.mobile-utilities.show{
+  display:flex;
+}
+
+.mobile-utilities button{
+  background:none;
+  border:1px solid rgba(255,255,255,.2);
+  color:#fff;
+  padding:6px 12px;
+  cursor:pointer;
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media(max-width:768px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .mobile-burger{
+    display:block;
+    justify-self:end;
+  }
+
+}

@@ -209,3 +209,21 @@ body {
   }
 
 }
+
+/* Fix mobile hamburger vertical alignment */
+@media (max-width: 768px) {
+
+  .navbar,
+  .nav-inner {
+    min-height: 56px;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    line-height: 1;
+  }
+
+}

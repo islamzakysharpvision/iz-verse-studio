@@ -1,95 +1,69 @@
-/* ======================================================
-   GLOBAL HEADER (Injected once – all pages)
-   ====================================================== */
+/* ---------------- INTRO (once per session) ---------------- */
 
-const header = document.getElementById("site-header");
+window.addEventListener("load", () => {
 
-header.innerHTML = `
-<nav class="main-nav">
-  <div class="nav-inner">
+  const intro = document.getElementById("intro");
 
-    <a href="index.html" class="brand">
-      <img src="assets/images/logo.png" alt="I.Z. Verse Studio">
-    </a>
+  if(!intro) return;
 
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="who-we-are.html">Who We Are</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="ai-gifts.html">AI Gifts</a></li>
-    </ul>
+  if(sessionStorage.getItem("iz_intro_done")){
+    intro.remove();
+    return;
+  }
 
-    <button class="mobile-burger" aria-label="menu">☰</button>
+  sessionStorage.setItem("iz_intro_done","1");
 
-  </div>
-</nav>
+  setTimeout(()=>{
+    intro.remove();
+  },2000);
 
-<div class="mobile-menu">
-  <a href="index.html">Home</a>
-  <a href="who-we-are.html">Who We Are</a>
-  <a href="services.html">Services</a>
-  <a href="portfolio.html">Portfolio</a>
-  <a href="contact.html">Contact</a>
-  <a href="ai-gifts.html">AI Gifts</a>
-</div>
+});
 
-<div class="mobile-utilities">
-  <button class="util-theme">Theme</button>
-  <button class="util-lang">EN / AR</button>
-  <button class="util-close">✕</button>
-</div>
-`;
+/* ---------------- HERO SLIDER ---------------- */
 
+const slides = document.querySelectorAll(".hero-slide");
+let current = 0;
 
-/* ======================================================
-   NAV BEHAVIOR
-   ====================================================== */
+function showSlide(i){
+  slides.forEach(s => s.classList.remove("active"));
+  slides[i].classList.add("active");
+}
 
-const nav = document.querySelector(".main-nav");
-const burger = document.querySelector(".mobile-burger");
-const mobileMenu = document.querySelector(".mobile-menu");
-const mobileUtilities = document.querySelector(".mobile-utilities");
+if(slides.length){
+  showSlide(0);
 
+  setInterval(()=>{
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  },4000);
+}
+
+/* ---------------- NAV AUTO HIDE ---------------- */
+
+const nav = document.querySelector(".nav");
 let lastScroll = 0;
 
-/* hide on scroll down – show only when reaching top */
 window.addEventListener("scroll", () => {
 
   const y = window.scrollY;
 
-  if (y > lastScroll && y > 80) {
-    nav.classList.add("nav-hidden");
-  } else {
-    if (y < 10) nav.classList.remove("nav-hidden");
+  if(y > lastScroll && y > 120){
+    nav.classList.add("hide");
+  }else{
+    nav.classList.remove("hide");
   }
 
   lastScroll = y;
+
 });
 
-/* mobile menu toggle */
-burger.addEventListener("click", () => {
-  mobileMenu.classList.toggle("show");
-});
+/* ---------------- MOBILE MENU ---------------- */
 
-/* mobile utilities bar – once per session */
-if (window.innerWidth <= 768) {
+const burger = document.getElementById("burger");
+const mobileMenu = document.getElementById("mobileMenu");
 
-  if (!sessionStorage.getItem("mobileUtilsClosed")) {
-
-    mobileUtilities.classList.add("show");
-
-    setTimeout(() => {
-      mobileUtilities.classList.remove("show");
-      sessionStorage.setItem("mobileUtilsClosed", "1");
-    }, 5000);
-
-  }
+if(burger && mobileMenu){
+  burger.addEventListener("click",()=>{
+    mobileMenu.classList.toggle("show");
+  });
 }
-
-/* close utilities */
-document.querySelector(".util-close").addEventListener("click", () => {
-  mobileUtilities.classList.remove("show");
-  sessionStorage.setItem("mobileUtilsClosed", "1");
-});

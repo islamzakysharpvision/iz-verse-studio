@@ -1,18 +1,40 @@
 /* ================= INTRO (once per session) ================= */
 
-const intro = document.getElementById("intro");
+window.addEventListener("load", () => {
 
-if (intro) {
-  if (sessionStorage.getItem("iz_intro_played")) {
+  const intro = document.getElementById("intro");
+
+  if(!intro) return;
+
+  if(sessionStorage.getItem("izIntroPlayed")){
     intro.remove();
-  } else {
-    sessionStorage.setItem("iz_intro_played", "1");
-
-    setTimeout(() => {
-      intro.style.display = "none";
-    }, 2200);
+    return;
   }
-}
+
+  sessionStorage.setItem("izIntroPlayed","true");
+
+  setTimeout(() => {
+    intro.remove();
+  }, 2600);
+
+});
+
+
+/* ================= NAV HIDE / SHOW (only at top) ================= */
+
+const nav = document.querySelector(".nav");
+
+window.addEventListener("scroll", () => {
+
+  if(!nav) return;
+
+  if(window.scrollY > 10){
+    nav.classList.add("hide");
+  }else{
+    nav.classList.remove("hide");
+  }
+
+});
 
 
 /* ================= MOBILE MENU ================= */
@@ -20,10 +42,18 @@ if (intro) {
 const burger = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobileMenu");
 
-if (burger && mobileMenu) {
+if(burger && mobileMenu){
+
   burger.addEventListener("click", () => {
     mobileMenu.classList.toggle("show");
   });
+
+  mobileMenu.querySelectorAll("a").forEach(link=>{
+    link.addEventListener("click",()=>{
+      mobileMenu.classList.remove("show");
+    });
+  });
+
 }
 
 
@@ -32,90 +62,36 @@ if (burger && mobileMenu) {
 const slides = document.querySelectorAll(".hero-slide");
 let currentSlide = 0;
 
-if (slides.length) {
+if(slides.length){
 
   slides[0].classList.add("active");
 
-  setInterval(() => {
+  setInterval(()=>{
+
     slides[currentSlide].classList.remove("active");
     currentSlide = (currentSlide + 1) % slides.length;
     slides[currentSlide].classList.add("active");
-  }, 4000);
+
+  },4000);
+
 }
-/* ================= SHARE ================= */
+
+
+/* ================= SHARE BUTTON ================= */
 
 const shareBtn = document.getElementById("shareBtn");
 
-if (shareBtn && navigator.share) {
+if(shareBtn && navigator.share){
+
   shareBtn.addEventListener("click", async () => {
-    try {
+
+    try{
       await navigator.share({
         title: document.title,
         url: window.location.href
       });
-    } catch(e){}
-  });
-}
+    }catch(e){}
 
-
-/* ================= THEME ================= */
-
-const themeToggle = document.getElementById("themeToggle");
-
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("light");
-  });
-}
-
-
-/* ================= LEGAL MODAL ================= */
-
-const legalPulse = document.getElementById("legalPulse");
-const legalModal = document.getElementById("legalModal");
-const legalClose = document.getElementById("legalClose");
-
-if (legalPulse && legalModal && legalClose) {
-
-  legalPulse.addEventListener("click", () => {
-    legalModal.classList.add("show");
-  });
-
-  legalClose.addEventListener("click", () => {
-    legalModal.classList.remove("show");
   });
 
 }
-
-/* ================= NEWSLETTER ================= */
-
-const newsletterForm = document.getElementById("newsletterForm");
-
-if(newsletterForm){
-
-  newsletterForm.addEventListener("submit", e => {
-    e.preventDefault();
-
-    const email = document.getElementById("newsletterEmail").value.trim();
-
-    if(!email) return;
-
-    alert("Thank you for subscribing to I.Z. Verse Studio.");
-
-    newsletterForm.reset();
-
-    /*
-      IMPORTANT:
-      GitHub Pages is static.
-      To actually send to:
-      islamzakysico@gmail.com
-
-      we will connect this later to:
-      - Formspree OR
-      - Google Forms OR
-      - Serverless mail endpoint
-    */
-  });
-
-}
-

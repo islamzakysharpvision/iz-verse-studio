@@ -1,93 +1,95 @@
+/* ======================================================
+   GLOBAL HEADER (Injected once – all pages)
+   ====================================================== */
+
+const header = document.getElementById("site-header");
+
+header.innerHTML = `
+<nav class="main-nav">
+  <div class="nav-inner">
+
+    <a href="index.html" class="brand">
+      <img src="assets/images/logo.png" alt="I.Z. Verse Studio">
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="who-we-are.html">Who We Are</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="ai-gifts.html">AI Gifts</a></li>
+    </ul>
+
+    <button class="mobile-burger" aria-label="menu">☰</button>
+
+  </div>
+</nav>
+
+<div class="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="who-we-are.html">Who We Are</a>
+  <a href="services.html">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html">Contact</a>
+  <a href="ai-gifts.html">AI Gifts</a>
+</div>
+
+<div class="mobile-utilities">
+  <button class="util-theme">Theme</button>
+  <button class="util-lang">EN / AR</button>
+  <button class="util-close">✕</button>
+</div>
+`;
+
+
+/* ======================================================
+   NAV BEHAVIOR
+   ====================================================== */
+
+const nav = document.querySelector(".main-nav");
+const burger = document.querySelector(".mobile-burger");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileUtilities = document.querySelector(".mobile-utilities");
+
 let lastScroll = 0;
-const navbar = document.querySelector(".navbar");
-const socialBar = document.querySelector(".social-bar");
 
+/* hide on scroll down – show only when reaching top */
 window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset;
 
-  if (currentScroll > lastScroll) {
-    navbar.style.top = "-80px";
-    socialBar.style.transform = "translateY(100%)";
+  const y = window.scrollY;
+
+  if (y > lastScroll && y > 80) {
+    nav.classList.add("nav-hidden");
   } else {
-    navbar.style.top = "0";
-    socialBar.style.transform = "translateY(0)";
+    if (y < 10) nav.classList.remove("nav-hidden");
   }
 
-  lastScroll = currentScroll;
+  lastScroll = y;
 });
 
-// Theme Toggle
-function toggleTheme() {
-  document.body.classList.toggle("light-mode");
-}
+/* mobile menu toggle */
+burger.addEventListener("click", () => {
+  mobileMenu.classList.toggle("show");
+});
 
-// Modal
-function openModal() {
-  document.getElementById("legalModal").style.display = "flex";
-}
-function closeModal() {
-  document.getElementById("legalModal").style.display = "none";
-}
+/* mobile utilities bar – once per session */
+if (window.innerWidth <= 768) {
 
-// PWA Service Worker
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js');
-}
-function openLightbox(src) {
-  document.getElementById("lightbox").style.display = "flex";
-  document.getElementById("lightboxImg").src = src;
-}
+  if (!sessionStorage.getItem("mobileUtilsClosed")) {
 
-function closeLightbox() {
-  document.getElementById("lightbox").style.display = "none";
-}
-const form = document.getElementById("contactForm");
-
-if (form) {
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const mobile = document.getElementById("mobile").value;
-    const service = document.getElementById("service").value;
-
-    const mailBody = `Name: ${name}%0AEmail: ${email}%0AMobile: ${mobile}%0AService Needed: ${service}`;
-
-    window.location.href = `mailto:islam.zaky.verse@gmail.com?subject=New Inquiry - I.Z. Verse Studio&body=${mailBody}`;
-
-    const modal = document.getElementById("successModal");
-    modal.style.display = "flex";
+    mobileUtilities.classList.add("show");
 
     setTimeout(() => {
-      modal.style.display = "none";
-    }, 500);
-  });
-}
+      mobileUtilities.classList.remove("show");
+      sessionStorage.setItem("mobileUtilsClosed", "1");
+    }, 5000);
 
-function clearForm() {
-  document.getElementById("contactForm").reset();
-}
-const transition = document.getElementById("page-transition");
-const links = document.querySelectorAll("a");
-
-links.forEach(link => {
-  link.addEventListener("click", function(e) {
-    const target = this.getAttribute("href");
-
-    if (!target.startsWith("#") && !target.startsWith("mailto")) {
-      e.preventDefault();
-      transition.classList.add("active");
-
-      setTimeout(() => {
-        window.location.href = target;
-      }, 600);
-    }
-  });
-});
-
-window.addEventListener("load", () => {
-  if (transition) {
-    transition.classList.remove("active");
   }
+}
+
+/* close utilities */
+document.querySelector(".util-close").addEventListener("click", () => {
+  mobileUtilities.classList.remove("show");
+  sessionStorage.setItem("mobileUtilsClosed", "1");
 });

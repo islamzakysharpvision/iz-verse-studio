@@ -42,3 +42,48 @@ if (slides.length) {
     slides[currentSlide].classList.add("active");
   }, 4000);
 }
+/* ================= SHARE ================= */
+
+const shareBtn = document.getElementById("shareBtn");
+
+if (shareBtn && navigator.share) {
+  shareBtn.addEventListener("click", async () => {
+    try {
+      await navigator.share({
+        title: document.title,
+        url: window.location.href
+      });
+    } catch(e){}
+  });
+}
+
+
+/* ================= THEME ================= */
+
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+  });
+}
+
+
+/* ================= LEGAL MODAL ================= */
+
+const legalPulse = document.getElementById("legalPulse");
+const legalModal = document.getElementById("legalModal");
+const legalClose = document.getElementById("legalClose");
+
+if (legalPulse && legalModal && legalClose) {
+
+  legalPulse.addEventListener("click", () => {
+    legalModal.classList.add("show");
+  });
+
+  legalClose.addEventListener("click", () => {
+    legalModal.classList.remove("show");
+  });
+
+}
+

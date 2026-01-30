@@ -227,3 +227,14 @@ body {
   }
 
 }
+/* Mobile hamburger must be on the right (LTR) */
+@media (max-width: 768px) {
+
+  .hamburger {
+    position: absolute;
+    right: 5%;
+    left: auto;
+  }
+
+}
+

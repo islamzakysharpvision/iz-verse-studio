@@ -244,3 +244,11 @@ body {
   }
 
 }
+
+/* === FIX mobile hamburger position (force right side) === */
+@media (max-width: 900px){
+  .nav-burger{
+    justify-self: end;
+    align-self: center;
+  }
+}

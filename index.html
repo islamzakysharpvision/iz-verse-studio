@@ -2,40 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>I.Z. Verse Studio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>I.Z. Verse Studio – Digital Universe</title>
 
-  <!-- SEO -->
-  <meta name="description" content="I.Z. Verse Studio – Strategic, cinematic and AI-powered creative studio." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#050505" />
+  <meta name="description" content="I.Z. Verse Studio – Premium creative lab merging human intuition with advanced AI to forge the future of business and media." />
 
-  <!-- PWA -->
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="manifest.json">
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/app.css">
 </head>
 
 <body class="page-home">
 
-<header id="site-header">
-  <!-- navbar comes later -->
+<!-- INTRO (once per session) -->
+<div id="intro">
+  <div class="intro-inner">
+    <!-- video / animation placeholder -->
+    <div class="intro-video">INTRO VIDEO</div>
+    <div class="intro-slogan">Elevate Your Digital Universe</div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="nav">
+  <div class="nav-inner">
+
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo.png" alt="I.Z. Verse Studio">
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="who-we-are.html">Who We Are</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="ai-prompts.html">AI Prompts</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- mobile only -->
+    <button class="nav-burger" id="burger">☰</button>
+
+  </div>
+
+  <!-- mobile menu -->
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="who-we-are.html">Who We Are</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="ai-prompts.html">AI Prompts</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </header>
 
-<main id="app">
+<main>
 
-  <!-- page content comes later -->
+<!-- HERO -->
+<section class="hero" id="hero">
+
+  <a class="hero-slide" href="portfolio.html">
+    <img src="assets/images/hero-1.jpg" alt="">
+  </a>
+
+  <a class="hero-slide" href="portfolio.html">
+    <img src="assets/images/hero-2.jpg" alt="">
+  </a>
+
+  <a class="hero-slide" href="portfolio.html">
+    <img src="assets/images/hero-3.jpg" alt="">
+  </a>
+
+  <div class="hero-glass">
+
+    <h1>Welcome to Our Digital Universe</h1>
+
+    <p class="hero-slogan">We set your business up to the next level.</p>
+
+    <p class="hero-text">
+      I.Z. Verse Studio is a premium creative lab merging human intuition with advanced AI
+      to forge the future of business, media and more.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn" href="who-we-are.html">Who we are</a>
+      <a class="btn ghost" href="services.html">Discover more</a>
+    </div>
+
+  </div>
+
+</section>
 
 </main>
-
-<footer id="site-footer">
-  <!-- footer bars come later -->
-</footer>
 
 <script src="assets/js/app.js"></script>
 </body>

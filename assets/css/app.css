@@ -232,3 +232,15 @@ body {
   }
 
 }
+
+/* ===== Force full width navbar on mobile (fix burger position) ===== */
+
+@media (max-width: 900px){
+
+  .nav-inner{
+    max-width:100%;
+    margin:0;
+    padding:16px 16px;
+  }
+
+}

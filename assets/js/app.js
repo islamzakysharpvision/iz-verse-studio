@@ -87,3 +87,35 @@ if (legalPulse && legalModal && legalClose) {
 
 }
 
+/* ================= NEWSLETTER ================= */
+
+const newsletterForm = document.getElementById("newsletterForm");
+
+if(newsletterForm){
+
+  newsletterForm.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const email = document.getElementById("newsletterEmail").value.trim();
+
+    if(!email) return;
+
+    alert("Thank you for subscribing to I.Z. Verse Studio.");
+
+    newsletterForm.reset();
+
+    /*
+      IMPORTANT:
+      GitHub Pages is static.
+      To actually send to:
+      islamzakysico@gmail.com
+
+      we will connect this later to:
+      - Formspree OR
+      - Google Forms OR
+      - Serverless mail endpoint
+    */
+  });
+
+}
+

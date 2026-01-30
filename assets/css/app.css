@@ -252,3 +252,10 @@ body {
     align-self: center;
   }
 }
+
+/* === hide hamburger on desktop (force) === */
+@media (min-width: 901px){
+  .nav-burger{
+    display: none !important;
+  }
+}

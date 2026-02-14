@@ -96,7 +96,7 @@ if (slides.length > 0) {
 
     slides[current].classList.add("active");
 
-  }, 1800); // Faster transition (1.8s)
+  }, 1500); // Faster transition (1.5s)
 
 }
 
@@ -181,3 +181,4 @@ window.addEventListener("click", (e) => {
     legalModal.classList.remove("show");
   }
 });
+

@@ -39,6 +39,11 @@ body{
   justify-content:center;
   opacity:.6;
 }
+.intro-video video {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
 .intro-slogan{
   letter-spacing:1px;
@@ -342,3 +347,4 @@ body{
   }
 
 }
+

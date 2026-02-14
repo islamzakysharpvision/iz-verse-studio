@@ -60,23 +60,17 @@ if(burger && mobileMenu){
 /* ================= HERO SLIDER ================= */
 
 const slides = document.querySelectorAll(".hero-slide");
-let currentSlide = 0;
 
-if(slides.length){
+if (slides.length > 0) {
+  let current = 0;
+  slides[current].classList.add("active");
 
-  slides[0].classList.add("active");
-
-  setInterval(()=>{
-
-    slides[currentSlide].classList.remove("active");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("active");
-
-  },4000);
-
+  setInterval(() => {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
+  }, 2500); // was slower before, now 2.5s
 }
-
-
 /* ================= SHARE BUTTON ================= */
 
 const shareBtn = document.getElementById("shareBtn");
@@ -95,3 +89,4 @@ if(shareBtn && navigator.share){
   });
 
 }
+

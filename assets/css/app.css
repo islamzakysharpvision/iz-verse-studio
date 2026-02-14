@@ -117,6 +117,18 @@ body{
   align-items:center;
   justify-content:center;
 }
+.social-bar img{
+  width:22px;
+  height:22px;
+  opacity:.6;
+  transition:all .3s ease;
+}
+
+.social-bar img:hover{
+  opacity:1;
+  transform:scale(1.15);
+  filter:drop-shadow(0 0 6px rgba(47,128,255,.6));
+}
 
 /* mobile menu */
 
@@ -347,4 +359,5 @@ body{
   }
 
 }
+
 

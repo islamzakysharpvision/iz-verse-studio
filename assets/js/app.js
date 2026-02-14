@@ -1,40 +1,55 @@
-/* ================= INTRO (once per session) ================= */
+/* =========================================================
+   I.Z. VERSE STUDIO – GLOBAL JS
+   Clean • Stable • Production Ready
+========================================================= */
+
+
+/* ================= INTRO (ONCE PER SESSION) ================= */
 
 window.addEventListener("load", () => {
 
   const intro = document.getElementById("intro");
+  if (!intro) return;
 
-  if(!intro) return;
+  const alreadyPlayed = sessionStorage.getItem("izIntroPlayed");
 
-  if(sessionStorage.getItem("izIntroPlayed")){
+  if (alreadyPlayed) {
     intro.remove();
     return;
   }
 
-  sessionStorage.setItem("izIntroPlayed","true");
+  sessionStorage.setItem("izIntroPlayed", "true");
 
   setTimeout(() => {
-    intro.remove();
-  }, 2600);
+    intro.classList.add("fade-out");
+    setTimeout(() => intro.remove(), 600);
+  }, 2500);
 
 });
 
 
-/* ================= NAV HIDE / SHOW (only at top) ================= */
+/* ================= NAV HIDE WHEN SCROLLING ================= */
 
 const nav = document.querySelector(".nav");
 
-window.addEventListener("scroll", () => {
+if (nav) {
 
-  if(!nav) return;
+  let lastScroll = 0;
 
-  if(window.scrollY > 10){
-    nav.classList.add("hide");
-  }else{
-    nav.classList.remove("hide");
-  }
+  window.addEventListener("scroll", () => {
 
-});
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 20) {
+      nav.classList.add("hide");
+    } else {
+      nav.classList.remove("hide");
+    }
+
+    lastScroll = currentScroll;
+  });
+
+}
 
 
 /* ================= MOBILE MENU ================= */
@@ -42,51 +57,127 @@ window.addEventListener("scroll", () => {
 const burger = document.getElementById("burger");
 const mobileMenu = document.getElementById("mobileMenu");
 
-if(burger && mobileMenu){
+if (burger && mobileMenu) {
 
-  burger.addEventListener("click", () => {
+  burger.addEventListener("click", (e) => {
+    e.stopPropagation();
     mobileMenu.classList.toggle("show");
   });
 
-  mobileMenu.querySelectorAll("a").forEach(link=>{
-    link.addEventListener("click",()=>{
+  mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
       mobileMenu.classList.remove("show");
     });
   });
 
+  document.addEventListener("click", (e) => {
+    if (!mobileMenu.contains(e.target) && !burger.contains(e.target)) {
+      mobileMenu.classList.remove("show");
+    }
+  });
+
 }
 
 
-/* ================= HERO SLIDER ================= */
+/* ================= HERO SLIDER (FASTER + SMOOTH) ================= */
 
 const slides = document.querySelectorAll(".hero-slide");
 
 if (slides.length > 0) {
+
   let current = 0;
   slides[current].classList.add("active");
 
   setInterval(() => {
+
     slides[current].classList.remove("active");
+
     current = (current + 1) % slides.length;
+
     slides[current].classList.add("active");
-  }, 2500); // was slower before, now 2.5s
+
+  }, 1800); // Faster transition (1.8s)
+
 }
+
+
 /* ================= SHARE BUTTON ================= */
 
 const shareBtn = document.getElementById("shareBtn");
 
-if(shareBtn && navigator.share){
+if (shareBtn) {
 
   shareBtn.addEventListener("click", async () => {
 
-    try{
-      await navigator.share({
-        title: document.title,
-        url: window.location.href
-      });
-    }catch(e){}
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: document.title,
+          text: "Check out I.Z. Verse Studio",
+          url: window.location.href
+        });
+      } catch (err) {}
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      alert("Link copied to clipboard.");
+    }
 
   });
 
 }
 
+
+/* ================= THEME TOGGLE ================= */
+
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+
+  const savedTheme = localStorage.getItem("izTheme");
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+  }
+
+  themeToggle.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+      localStorage.setItem("izTheme", "light");
+    } else {
+      localStorage.setItem("izTheme", "dark");
+    }
+
+  });
+
+}
+
+
+/* ================= LEGAL MODAL ================= */
+
+const legalPulse = document.getElementById("legalPulse");
+const legalModal = document.getElementById("legalModal");
+const legalClose = document.getElementById("legalClose");
+
+if (legalPulse && legalModal) {
+
+  legalPulse.addEventListener("click", () => {
+    legalModal.classList.add("show");
+  });
+
+}
+
+if (legalClose && legalModal) {
+
+  legalClose.addEventListener("click", () => {
+    legalModal.classList.remove("show");
+  });
+
+}
+
+window.addEventListener("click", (e) => {
+  if (e.target === legalModal) {
+    legalModal.classList.remove("show");
+  }
+});

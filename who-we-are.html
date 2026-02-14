@@ -14,17 +14,25 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="assets/css/app.css">
 </head>
 
-<body class="page-inner page-who">
+<body class="page-inner">
 
-<div class="intro-video">
-  <video autoplay muted playsinline>
-    <source src="assets/videos/intro.mp4" type="video/mp4">
-  </video>
+<!-- INTRO -->
+<div id="intro">
+  <div class="intro-inner">
+    <div class="intro-video">
+      <video autoplay muted playsinline>
+        <source src="assets/videos/intro.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="intro-slogan">Elevate Your Digital Universe</div>
+  </div>
 </div>
 
+<!-- NAV -->
 <header class="nav">
   <div class="nav-inner">
 
@@ -41,7 +49,7 @@
       <a href="contact.html">Contact</a>
     </nav>
 
-    <button class="nav-burger" id="burger" aria-label="Menu">☰</button>
+    <button class="nav-burger" id="burger">☰</button>
 
   </div>
 
@@ -57,316 +65,151 @@
 
 <main>
 
-<!-- ================= PAGE HERO ================= -->
-
+<!-- HERO -->
 <section class="page-hero">
   <img src="assets/images/placeholders/banner.jpg" alt="">
   <div class="page-hero-glass">
-    <h1>Who We Are</h1>
-    <p class="page-hero-sub">More Than Service Providers. We Are Strategic Partners.</p>
+    <h1>More Than Service Providers</h1>
+    <p class="page-hero-sub">We Are Strategic Partners.</p>
   </div>
 </section>
 
+<!-- INTRO TEXT -->
+<section class="home-block">
 
-<!-- ================= INTRO ================= -->
-<div id="intro">
-  <div class="intro-inner">
-    <div class="intro-video">
-      <video autoplay muted playsinline>
-        <source src="assets/videos/intro.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="intro-slogan">
-      Elevate Your Digital Universe
-    </div>
+  <header class="block-header">
+    <h2>Our Foundation</h2>
+  </header>
+
+  <div class="home-cards">
+
+    <article class="home-card">
+      <p>
+        At I.Z. Verse Studio, we engineer outcomes — not just deliver services.
+        Built on over 15 years of Digital Transformation, Creative Production,
+        and Strategic Project Management experience.
+      </p>
+    </article>
+
+    <article class="home-card">
+      <p>
+        We combine PMP® governance precision with cinematic creativity
+        and Generative AI innovation to deliver solutions that are
+        both operationally sound and visually powerful.
+      </p>
+    </article>
+
   </div>
-</div>
-
-  
-<section class="about-intro">
-
-  <p>
-    At I.Z. Verse Studio, we don’t just execute tasks; we engineer outcomes.
-    Built on a foundation of over 15 years in Digital Transformation, Creative Production,
-    and Strategic Project Management, we operate at the intersection of rigorous business logic
-    and limitless artistic vision.
-  </p>
-
-  <p>
-    We are a studio designed for the modern era, where experience meets innovation.
-    Our approach combines the precision of PMP-certified methodologies with the cutting-edge
-    potential of Generative AI, allowing us to deliver solutions that are not only creatively
-    superior but operationally sound.
-  </p>
-
-  <p>
-    <strong>Our Promise: The “Zero-Error” Standard.</strong>
-    From managing mega-projects for international banking giants to producing cinematic-level media,
-    our track record is defined by one thing: Excellence.
-  </p>
-
-  <p>
-    We bridge the gap between “Run the Business” reliability and “Change the Business” innovation.
-  </p>
 
 </section>
 
+<!-- WHY US -->
+<section class="home-block">
 
-<!-- ================= WHY US ================= -->
+  <header class="block-header">
+    <h2>Why Leaders Choose Us</h2>
+  </header>
 
-<section class="about-why">
+  <div class="home-cards">
 
-  <h2>Why Leaders Choose Us</h2>
+    <article class="home-card">
+      <h4>Integrated Ecosystem</h4>
+      <p>Strategy, creative execution and operational logistics under one roof.</p>
+    </article>
 
-  <ul class="about-list">
-    <li><strong>Integrated Ecosystem:</strong> We handle the Logic (Strategy), the Look (Creative), and the Logistics (Execution) under one roof.</li>
-    <li><strong>Global Standards:</strong> Deep local market knowledge fortified by international governance and compliance best practices.</li>
-    <li><strong>Future-Ready:</strong> Advanced AI-driven workflows and digital strategies that keep you ahead of the curve.</li>
-  </ul>
+    <article class="home-card">
+      <h4>Global Standards</h4>
+      <p>International governance discipline with local market expertise.</p>
+    </article>
 
-  <p class="about-tagline">Strategize. Create. Experience.</p>
+    <article class="home-card">
+      <h4>Future-Ready Approach</h4>
+      <p>AI-driven workflows and digital innovation at the core.</p>
+    </article>
+
+  </div>
 
 </section>
 
+<!-- FOUNDER -->
+<section class="home-block" id="founder">
 
-<img class="section-divider" src="assets/images/placeholders/divider.jpg" alt="">
+  <header class="block-header">
+    <h2>Meet The Founder</h2>
+  </header>
 
+  <div class="home-cards">
 
-<!-- ================= FOUNDER ================= -->
-
-<section class="about-founder" id="founder">
-
-  <div class="founder-grid">
-
-    <div class="founder-image">
+    <article class="home-card">
       <img src="assets/images/placeholders/founder.jpg" alt="Islam Zaky">
-    </div>
-
-    <div class="founder-content">
-
-      <h2>Meet The Founder</h2>
-
-      <h3>Islam Zaky</h3>
-
-      <p class="founder-role">
-        Founder & CEO | PMP® Certified Strategist | Creative Director with 15+ years of creating content for top level corporates
-      </p>
-
-      <p class="founder-quote">
-        “I bridge the gap between creative vision and technical execution.”
-      </p>
-
+      <h4>Islam Zaky</h4>
       <p>
-        With over two decades of experience delivering flagship projects for high-end brands
-        and international institutions, I operate where art meets authority.
-        My career is built on a dual foundation: the discipline of global banking operations
-        and the soul of a cinematographer.
+        Founder & CEO | PMP® Certified Strategist | Creative Director
       </p>
-
-      <h4>The Journey</h4>
-
       <p>
-        My path began in the creative sector in 2010, managing media production and directing
-        cinematic projects. This early immersion in the arts taught me that a vision is only
-        as good as its execution.
+        Bridging corporate governance discipline with cinematic storytelling excellence.
       </p>
-
-      <p>
-        Pivoting to the corporate world, I spent over a decade within the International Banking Sector,
-        advancing from frontline operations to Regional IT Project Manager & Domain Lead.
-        I have managed global governance for web assets across 64 countries, led digital transformation
-        initiatives, and balanced multi-million-dollar operational budgets with strategic growth investments.
-      </p>
-
-      <p>
-        Today, I bring that same rigorous, “Zero-Error” mindset to I.Z. Verse Studio.
-        Whether it is streamlining a complex vendor contract or directing a high-stakes commercial,
-        I apply the same level of precision, governance, and creative passion.
-      </p>
-
-    </div>
+    </article>
 
   </div>
 
 </section>
 
-
-<img class="section-divider" src="assets/images/placeholders/divider.jpg" alt="">
-
-
-<!-- ================= CORE COMPETENCIES ================= -->
-
-<section class="about-competencies">
-
-  <h2>Core Competencies</h2>
-
-  <div class="competency-grid">
-
-    <div class="competency-block">
-      <h3>Strategic Leadership</h3>
-      <ul>
-        <li><strong>Global Governance & Transformation:</strong> Managing digital assets across borders, ensuring brand consistency and regulatory compliance.</li>
-        <li><strong>Agile Project Delivery:</strong> Utilizing PMP and Agile methodologies to lead complex cross-functional programs.</li>
-        <li><strong>Operational Resilience:</strong> Bridging technical teams and business strategy to deliver sustainable operational value.</li>
-      </ul>
-    </div>
-
-    <div class="competency-block">
-      <h3>Creative Authority</h3>
-      <ul>
-        <li><strong>Cinematic Excellence:</strong> 20+ years of professional experience in cinematography, directing and editing.</li>
-        <li><strong>AI Integration:</strong> Expert-level prompt engineering and workflow automation for scale and efficiency.</li>
-        <li><strong>Digital Mastery:</strong> Certified digital performance across Google, Meta and LinkedIn platforms.</li>
-      </ul>
-    </div>
-
-    <div class="competency-block">
-      <h3>Continuous Evolution</h3>
-      <ul>
-        <li>MBA Candidate – Class of 2026</li>
-        <li>PMP®, Agile & Scrum (PMI), Strategic Management (EBI), FinTech Essentials</li>
-      </ul>
-    </div>
-
-  </div>
-
+<!-- MANTRA -->
+<section class="home-legacy">
+  <img src="assets/images/placeholders/home-legacy.jpg" alt="">
 </section>
 
-
-<img class="section-divider" src="assets/images/placeholders/divider.jpg" alt="">
-
-
-<!-- ================= MANTRA ================= -->
-
-<section class="about-mantra">
-
-  <p>
-    “Smarter every day. The Era of AI. Creating content that blows your mind.
-    Together, we rise.”
-  </p>
-
-</section>
-
-
-<!-- ================= AI GIFT CTA ================= -->
-
+<!-- AI CTA -->
 <section class="home-ai-gift">
-
   <a href="ai-gifts.html" class="ai-gift-card">
-
-    <img src="assets/images/placeholders/promo.jpg" alt="AI Gift">
-
+    <img src="assets/images/placeholders/home-ai-gift.jpg" alt="">
     <div class="ai-gift-text">
       <h3>I want my AI Gift</h3>
       <p>Free tools, prompts & creative magic waiting for you.</p>
     </div>
-
   </a>
-
 </section>
 
 </main>
 
-
-<!-- Newsletter -->
-<section class="newsletter">
-  <!-- content later -->
-</section>
-
-<!-- Action bar -->
+<!-- ACTION BAR -->
 <section class="action-bar">
   <a href="contact.html" class="action-btn primary">Contact us</a>
   <button class="action-btn ghost" id="shareBtn">Share</button>
 </section>
 
-<!-- Social bar -->
+<!-- SOCIAL -->
 <section class="social-bar">
-
-  <a href="https://bit.ly/Facebook-Verse" target="_blank">
-    <img src="assets/icons/face.svg" alt="Facebook">
-  </a>
-
-  <a href="https://www.instagram.com/is.zaky.verse" target="_blank">
-    <img src="assets/icons/instagram.svg" alt="Instagram">
-  </a>
-
-  <a href="https://bit.ly/IZ-Verse" target="_blank">
-    <img src="assets/icons/youtube.svg" alt="YouTube">
-  </a>
-
-  <a href="https://bit.ly/Verse-TikTok" target="_blank">
-    <img src="assets/icons/tiktok.svg" alt="TikTok">
-  </a>
-
-  <a href="https://pin.it/6ZtBIWrli" target="_blank">
-    <img src="assets/icons/pineterest.svg" alt="Pinterest">
-  </a>
-
-  <a href="https://x.com/VerseZaky" target="_blank">
-    <img src="assets/icons/x.svg" alt="X">
-  </a>
-
-  <a href="https://bit.ly/Verse-SnapChat" target="_blank">
-    <img src="assets/icons/snap.svg" alt="Snapchat">
-  </a>
-
-  <a href="mailto:islam.zaky.verse@gmail.com">
-    <img src="assets/icons/google.svg" alt="Email">
-  </a>
-
-  <a href="https://wa.me/201090724801" target="_blank">
-    <img src="assets/icons/whatsapp.svg" alt="WhatsApp">
-  </a>
-
-  <a href="who-we-are.html#founder">
-    🙂
-  </a>
-
+  <a href="https://bit.ly/Facebook-Verse" target="_blank"><img src="assets/icons/face.svg" alt=""></a>
+  <a href="https://www.instagram.com/is.zaky.verse" target="_blank"><img src="assets/icons/instagram.svg" alt=""></a>
+  <a href="https://bit.ly/IZ-Verse" target="_blank"><img src="assets/icons/youtube.svg" alt=""></a>
+  <a href="https://bit.ly/Verse-TikTok" target="_blank"><img src="assets/icons/tiktok.svg" alt=""></a>
+  <a href="https://x.com/VerseZaky" target="_blank"><img src="assets/icons/x.svg" alt=""></a>
+  <a href="mailto:islam.zaky.verse@gmail.com"><img src="assets/icons/google.svg" alt=""></a>
+  <a href="https://wa.me/201090724801" target="_blank"><img src="assets/icons/whatsapp.svg" alt=""></a>
 </section>
 
-
+<!-- FOOTER -->
 <footer class="bottom-bar">
-
   <div class="bottom-tools">
     <button id="themeToggle">Dark / Light</button>
-    <button id="langToggle">EN / AR</button>
   </div>
-
   <div class="bottom-credits">
-    <span>Built by I.Z. Verse Studio © 2026</span>
-<span id="legalPulse" class="legal-pulse">◉</span>
-    <span>© 2026 I.Z. Verse Studio. All Rights Reserved.</span>
+    Built by I.Z. Verse Studio © 2026
+    <span id="legalPulse">◉</span>
   </div>
-
 </footer>
 
+<!-- LEGAL -->
 <div class="legal-modal" id="legalModal">
   <div class="legal-box">
     <h3>Legal & Credits</h3>
-    <strong>Legal & Credits</strong>
-    <p>
-      Applications & Site Content, Visuals, VFX, CGI, Digital Assets & Compositing, AI synthesis,
-      Codes Prompting, Audiology & SFX are Original Work By ©Islam Zaky, AKA I.Z. Verse Studio & Ziko Mazziko.
-      These assets are unauthorized for re-uploading, remixing, or any commercial use without official permission
-      and are protected under the Digital Millennium Copyright Act (DMCA) and Egyptian Intellectual Property Law No. 82 of 2002.
-    </p>
-    <p>
-      Powered by Google Gemini PRO, ChatGPT5.2, Sora 2, Midjourney PRO, Suno PRO, MusicLab, Canva PRO, CapCut PRO,
-      Buffer, Metricool, Adobe Photoshop, Adobe FireFly, Adobe Premiere, Adobe Illustrator, Adobe After Effects,
-      Adobe Express, Infographic Maker, Arabic and English Voice Over Maker, Shopify MarketPlace, EasyShop MarketPlace,
-      Notion PRO, Perplexity, DeepSeek, Meta AI Generator, Google VEO3.1, Nano Banana Pro, GitHub, Spotify, DistroKid and others.
-      Commercial permission: islamzaky.sharpvision@gmail.com
-    </p>
-    <button class="legal-close" id="legalClose">Acknowledged</button>
+    <p>© Islam Zaky – I.Z. Verse Studio. Protected under DMCA & Egyptian IP Law.</p>
+    <button id="legalClose">Acknowledged</button>
   </div>
 </div>
 
 <script src="assets/js/app.js"></script>
 </body>
 </html>
-
-
-
-
-
-

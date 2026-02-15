@@ -1,39 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>I.Z. Verse Studio – Digital Universe</title>
+  <meta charset="UTF-8" />
+  <title>I.Z. Verse Studio – Digital Universe</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050505">
-<meta name="description" content="I.Z. Verse Studio – Premium creative lab merging human intuition with advanced AI to forge the future of business and media.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="I.Z. Verse Studio – Premium creative lab merging strategy, creativity and AI innovation to build digital legacies." />
 
-<link rel="manifest" href="manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
 
-<link rel="stylesheet" href="assets/css/app.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/app.css">
 </head>
 
 <body class="page-home">
 
-<!-- ================= INTRO ================= -->
+<!-- ================= INTRO (Plays Once Per Session) ================= -->
+
 <div id="intro">
   <div class="intro-inner">
-    <div class="intro-video">
-      <video autoplay muted playsinline>
-        <source src="assets/videos/intro.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="intro-slogan">
-      Elevate Your Digital Universe
-    </div>
+    <video autoplay muted playsinline>
+      <source src="assets/videos/intro.mp4" type="video/mp4">
+    </video>
+    <div class="intro-slogan">Elevate Your Digital Universe</div>
   </div>
 </div>
 
-
 <!-- ================= NAV ================= -->
+
 <header class="nav">
   <div class="nav-inner">
 
@@ -42,7 +40,7 @@
     </a>
 
     <nav class="nav-links">
-      <a href="index.html" class="active">Home</a>
+      <a href="index.html">Home</a>
       <a href="who-we-are.html">Who We Are</a>
       <a href="services.html">Services</a>
       <a href="portfolio.html">Portfolio</a>
@@ -50,7 +48,8 @@
       <a href="contact.html">Contact</a>
     </nav>
 
-    <button class="nav-burger" id="burger" aria-label="Menu">☰</button>
+    <button class="nav-burger" id="burger">☰</button>
+
   </div>
 
   <div class="nav-mobile" id="mobileMenu">
@@ -63,153 +62,117 @@
   </div>
 </header>
 
-
 <main>
 
-<!-- ================= HERO ================= -->
+<!-- ================= HERO SLIDER ================= -->
+
 <section class="hero">
 
-  <div class="hero-slide">
-    <img src="assets/images/placeholders/hero-1.jpg" alt="">
-  </div>
-
-  <div class="hero-slide">
-    <img src="assets/images/placeholders/hero-2.jpg" alt="">
-  </div>
-
-  <div class="hero-slide">
-    <img src="assets/images/placeholders/hero-3.jpg" alt="">
-  </div>
-
-  <div class="hero-slide">
-    <img src="assets/images/placeholders/hero-4.jpg" alt="">
-  </div>
-
-  <div class="hero-slide">
-    <img src="assets/images/placeholders/hero-5.jpg" alt="">
-  </div>
-
-  <div class="hero-slide">
-    <img src="assets/images/placeholders/hero-6.jpg" alt="">
-  </div>
+  <div class="hero-slide"><img src="assets/images/placeholders/hero-1.jpg" alt=""></div>
+  <div class="hero-slide"><img src="assets/images/placeholders/hero-2.jpg" alt=""></div>
+  <div class="hero-slide"><img src="assets/images/placeholders/hero-3.jpg" alt=""></div>
+  <div class="hero-slide"><img src="assets/images/placeholders/hero-4.jpg" alt=""></div>
+  <div class="hero-slide"><img src="assets/images/placeholders/hero-5.jpg" alt=""></div>
+  <div class="hero-slide"><img src="assets/images/placeholders/hero-6.jpg" alt=""></div>
 
   <div class="hero-glass">
     <h1>Welcome to Our Digital Universe</h1>
-    <p class="hero-slogan">We set your business up to the next level.</p>
+    <p class="hero-slogan">Strategy. Creativity. Intelligence.</p>
     <p class="hero-text">
-      I.Z. Verse Studio is a premium creative lab merging human intuition with advanced AI
-      to forge the future of business, media and more.
+      We merge executive precision with cinematic creativity and advanced AI to build brands,
+      engineer systems and craft digital experiences that endure.
     </p>
 
     <div class="hero-actions">
-      <a class="btn" href="who-we-are.html">Who we are</a>
-      <a class="btn ghost" href="services.html">Discover more</a>
+      <a href="who-we-are.html" class="btn">Who We Are</a>
+      <a href="services.html" class="btn ghost">Explore Services</a>
     </div>
   </div>
 
 </section>
 
-
 <!-- ================= HOME INTRO ================= -->
-<section class="home-intro">
 
-  <h2 class="home-title">Orchestrating Excellence</h2>
+<section class="home-intro fade-in">
+  <h2>Orchestrating Excellence</h2>
+  <p>
+    True leadership is an art form. We combine executive strategy,
+    digital transformation and creative mastery to engineer legacies —
+    not just deliverables.
+  </p>
+</section>
 
-  <blockquote class="home-quote">
-    “True leadership is an art form. We combine the rigor of executive strategy
-    with the limitless potential of creative media.
-    Whether you need to scale your business or tell your story,
-    we don't just deliver results—we engineer legacies.”
-    <span>By Islam Zaky – Founder & CEO of I.Z. Verse Studio</span>
-  </blockquote>
+<!-- ================= LEGACY IMAGE ================= -->
 
+<section class="home-legacy fade-in">
+  <img src="assets/images/placeholders/home-legacy.jpg" alt="">
+</section>
+
+<!-- ================= HOME CARDS ================= -->
+
+<section class="home-block fade-in">
+
+  <div class="home-cards">
+
+    <article class="home-card">
+      <img src="assets/images/placeholders/home-card-1.jpg" alt="">
+      <h4>Strategic Business Architecture</h4>
+      <p>Digital transformation, governance and scalable growth frameworks.</p>
+    </article>
+
+    <article class="home-card">
+      <img src="assets/images/placeholders/home-card-2.jpg" alt="">
+      <h4>AI Integrated Systems</h4>
+      <p>Custom AI workflows and precision-engineered prompt ecosystems.</p>
+    </article>
+
+    <article class="home-card">
+      <img src="assets/images/placeholders/home-card-3.jpg" alt="">
+      <h4>Cinematic Media Production</h4>
+      <p>Film-grade visuals, VFX and creative storytelling experiences.</p>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- ================= AI GIFT CTA ================= -->
+
+<section class="home-ai-gift fade-in">
+  <a href="ai-gifts.html" class="ai-gift-card">
+    <img src="assets/images/placeholders/home-ai-gift.jpg" alt="">
+    <div class="ai-gift-text">
+      <h3>Claim Your AI Gift</h3>
+      <p>Free tools, prompt packs and creative accelerators.</p>
+    </div>
+  </a>
 </section>
 
 </main>
 
-
 <!-- ================= FOOTER ================= -->
 
-<footer class="bottom-bar">
+<footer class="footer-stack">
 
-  <div class="bottom-tools">
-    <button id="themeToggle">Dark / Light</button>
-    <button id="langToggle">EN / AR</button>
+  <div class="footer-bar footer-actions">
+    <a href="contact.html" class="footer-btn">Contact Us</a>
+    <button class="footer-btn ghost" id="shareBtn">Share</button>
   </div>
 
-  <div class="bottom-credits">
-    <span>Built by I.Z. Verse Studio © 2026</span>
-    <span id="legalPulse" class="legal-pulse">◉</span>
-    <span>© 2026 I.Z. Verse Studio. All Rights Reserved.</span>
+  <div class="footer-bar social-bar">
+    <a href="https://bit.ly/Facebook-Verse" target="_blank"><img src="assets/icons/face.svg" alt=""></a>
+    <a href="https://www.instagram.com/is.zaky.verse" target="_blank"><img src="assets/icons/instagram.svg" alt=""></a>
+    <a href="https://bit.ly/IZ-Verse" target="_blank"><img src="assets/icons/youtube.svg" alt=""></a>
+    <a href="https://x.com/VerseZaky" target="_blank"><img src="assets/icons/x.svg" alt=""></a>
+    <a href="mailto:islam.zaky.verse@gmail.com"><img src="assets/icons/google.svg" alt=""></a>
+    <a href="https://wa.me/201090724801" target="_blank"><img src="assets/icons/whatsapp.svg" alt=""></a>
+  </div>
+
+  <div class="footer-bar footer-bottom">
+    Built by I.Z. Verse Studio © 2026
   </div>
 
 </footer>
-
-
-<!-- ================= SOCIAL BAR ================= -->
-<section class="social-bar">
-
-  <a href="https://bit.ly/Facebook-Verse" target="_blank">
-    <img src="assets/icons/face.svg" alt="Facebook">
-  </a>
-
-  <a href="https://www.instagram.com/is.zaky.verse" target="_blank">
-    <img src="assets/icons/instagram.svg" alt="Instagram">
-  </a>
-
-  <a href="https://bit.ly/IZ-Verse" target="_blank">
-    <img src="assets/icons/youtube.svg" alt="YouTube">
-  </a>
-
-  <a href="https://bit.ly/Verse-TikTok" target="_blank">
-    <img src="assets/icons/tiktok.svg" alt="TikTok">
-  </a>
-
-  <a href="https://pin.it/6ZtBIWrli" target="_blank">
-    <img src="assets/icons/pineterest.svg" alt="Pinterest">
-  </a>
-
-  <a href="https://x.com/VerseZaky" target="_blank">
-    <img src="assets/icons/x.svg" alt="X">
-  </a>
-
-  <a href="https://bit.ly/Verse-SnapChat" target="_blank">
-    <img src="assets/icons/snap.svg" alt="Snapchat">
-  </a>
-
-  <a href="mailto:islam.zaky.verse@gmail.com">
-    <img src="assets/icons/google.svg" alt="Email">
-  </a>
-
-  <a href="https://wa.me/201090724801" target="_blank">
-    <img src="assets/icons/whatsapp.svg" alt="WhatsApp">
-  </a>
-
-</section>
-
-
-<!-- ================= LEGAL MODAL ================= -->
-<div class="legal-modal" id="legalModal">
-  <div class="legal-box">
-
-    <h3>Legal & Credits</h3>
-
-    <p>
-      Applications, visuals, VFX, CGI, AI synthesis and code prompting
-      are Original Work By © Islam Zaky – I.Z. Verse Studio.
-      Unauthorized use violates the Digital Millennium Copyright Act (DMCA)
-      and Egyptian Intellectual Property Law No. 82 of 2002.
-    </p>
-
-    <p>
-      For commercial permission:
-      islamzaky.sharpvision@gmail.com
-    </p>
-
-    <button class="legal-close" id="legalClose">Acknowledged</button>
-
-  </div>
-</div>
 
 <script src="assets/js/app.js"></script>
 </body>

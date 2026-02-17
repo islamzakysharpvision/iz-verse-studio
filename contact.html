@@ -2,25 +2,22 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <title>Contact – I.Z. Verse Studio</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#050505">
-<meta name="description" content="Contact I.Z. Verse Studio – Let’s build something remarkable together.">
+<meta name="description" content="Contact I.Z. Verse Studio. Let’s build something remarkable together.">
 
 <link rel="manifest" href="manifest.json">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="assets/css/app.css">
 </head>
 
 <body class="page-inner page-contact">
 
-<!-- ================= INTRO ================= -->
+<!-- INTRO -->
 <div id="intro">
   <div class="intro-inner">
     <div class="intro-video">
@@ -28,14 +25,15 @@
         <source src="assets/videos/intro.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="intro-slogan">Elevate Your Digital Universe</div>
+    <div class="intro-slogan">
+      Elevate Your Digital Universe
+    </div>
   </div>
 </div>
 
-<!-- ================= NAV ================= -->
+<!-- NAV -->
 <header class="nav">
   <div class="nav-inner">
-
     <a href="index.html" class="nav-logo">
       <img src="assets/images/logo.png" alt="I.Z. Verse Studio">
     </a>
@@ -50,7 +48,6 @@
     </nav>
 
     <button class="nav-burger" id="burger">☰</button>
-
   </div>
 
   <div class="nav-mobile" id="mobileMenu">
@@ -65,81 +62,113 @@
 
 <main>
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="page-hero">
-  <img src="assets/images/placeholders/banner.jpg" alt="">
+  <img src="assets/images/placeholders/banner-contact.jpg" alt="">
   <div class="page-hero-glass">
-    <h1>Let’s Build Something Powerful</h1>
-    <p class="page-hero-sub">Strategy. Creativity. Execution.</p>
-    <p class="page-hero-text">
-      Whether you're scaling a business, launching a product, or engineering a digital transformation —
-      we’re ready to partner with you.
+    <h1>Let’s Build Something Exceptional</h1>
+    <p class="page-hero-sub">
+      Your Vision Deserves Precision.
     </p>
   </div>
 </section>
 
-<!-- ================= CONTACT FORM ================= -->
-<section class="home-block">
+<!-- CONTACT FORM -->
+<section class="contact-section">
 
-  <header class="block-header">
-    <h2>Start The Conversation</h2>
-    <p>Tell us about your project. We respond personally.</p>
-  </header>
+  <h2>Start the Conversation</h2>
+  <p class="contact-sub">
+    Tell us about your project and we will respond shortly.
+  </p>
 
-  <!-- Placeholder for Google Form -->
-  <div class="home-card" style="max-width:700px;margin:auto;text-align:center;">
-    <h4>Google Form Integration</h4>
-    <p>
-      Your contact form will be embedded here.
-      (You mentioned you will connect Google Form later.)
-    </p>
-  </div>
+  <!-- Google Form will replace action later -->
+  <form class="contact-form">
+
+    <div class="form-row">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+    </div>
+
+    <div class="form-row">
+      <input type="text" placeholder="Company / Organization">
+      <input type="tel" placeholder="Phone Number">
+    </div>
+
+    <textarea placeholder="Tell us about your project..." rows="6" required></textarea>
+
+    <button type="submit" class="btn">
+      Send Message
+      <img src="assets/icons/arrow.png" class="btn-arrow" alt="">
+    </button>
+
+  </form>
 
 </section>
 
-<img class="section-divider" src="assets/images/placeholders/divider.jpg" alt="">
+<img class="section-divider" src="assets/images/placeholders/divider-contact.jpg" alt="">
 
-<!-- ================= DIRECT CONTACT ================= -->
-<section class="home-block">
+<!-- CONTACT INFO -->
+<section class="contact-info">
 
-  <header class="block-header">
-    <h2>Direct Contact</h2>
-    <p>Prefer direct communication? Reach us below.</p>
-  </header>
+  <h2>Direct Contact</h2>
 
-  <div class="home-cards">
+  <div class="contact-grid">
 
-    <article class="home-card">
-      <h4>Email</h4>
+    <div class="contact-card">
+      <img src="assets/images/placeholders/contact-email.jpg" alt="">
+      <h3>Email</h3>
       <p>islam.zaky.verse@gmail.com</p>
-    </article>
+    </div>
 
-    <article class="home-card">
-      <h4>WhatsApp</h4>
+    <div class="contact-card">
+      <img src="assets/images/placeholders/contact-whatsapp.jpg" alt="">
+      <h3>WhatsApp</h3>
       <p>+20 109 072 4801</p>
-    </article>
+    </div>
 
-    <article class="home-card">
-      <h4>Location</h4>
-      <p>Egypt – Serving Global Clients</p>
-    </article>
+    <div class="contact-card">
+      <img src="assets/images/placeholders/contact-location.jpg" alt="">
+      <h3>Location</h3>
+      <p>Egypt</p>
+    </div>
 
   </div>
 
 </section>
 
-<!-- ================= FINAL MESSAGE ================= -->
-<section class="home-legacy">
-  <div class="legacy-inner">
-    <p>
-      Your vision deserves precision.
-      Let’s turn ambition into structured success.
-    </p>
-    <img src="assets/images/placeholders/home-legacy.jpg" alt="">
-  </div>
+<!-- CLOSING STATEMENT -->
+<section class="contact-legacy">
+  <p>
+    Strategic Clarity. Creative Power. Flawless Execution.
+  </p>
 </section>
 
 </main>
+
+<!-- FOOTER -->
+<footer class="bottom-bar">
+  <div class="bottom-tools">
+    <button id="themeToggle">Dark / Light</button>
+    <button id="langToggle">EN / AR</button>
+  </div>
+
+  <div class="bottom-credits">
+    Built by I.Z. Verse Studio © 2026
+    <span id="legalPulse" class="legal-pulse">◉</span>
+    © 2026 All Rights Reserved
+  </div>
+</footer>
+
+<div class="legal-modal" id="legalModal">
+  <div class="legal-box">
+    <h3>Legal & Credits</h3>
+    <p>
+      All creative assets and workflows are original work by
+      © Islam Zaky – I.Z. Verse Studio.
+    </p>
+    <button class="legal-close" id="legalClose">Acknowledged</button>
+  </div>
+</div>
 
 <script src="assets/js/app.js"></script>
 </body>

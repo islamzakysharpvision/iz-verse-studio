@@ -1,6 +1,6 @@
 /* =========================================================
-   I.Z. VERSE STUDIO – GLOBAL JS
-   Clean • Stable • Production Ready
+   I.Z. VERSE STUDIO – MASTER JS
+   Production Ready – Clean & Stable
 ========================================================= */
 
 
@@ -11,9 +11,9 @@ window.addEventListener("load", () => {
   const intro = document.getElementById("intro");
   if (!intro) return;
 
-  const alreadyPlayed = sessionStorage.getItem("izIntroPlayed");
+  const played = sessionStorage.getItem("izIntroPlayed");
 
-  if (alreadyPlayed) {
+  if (played) {
     intro.remove();
     return;
   }
@@ -21,32 +21,26 @@ window.addEventListener("load", () => {
   sessionStorage.setItem("izIntroPlayed", "true");
 
   setTimeout(() => {
-    intro.classList.add("fade-out");
+    intro.style.opacity = "0";
+    intro.style.transition = "opacity .6s ease";
     setTimeout(() => intro.remove(), 600);
   }, 2500);
 
 });
 
 
-/* ================= NAV HIDE WHEN SCROLLING ================= */
+/* ================= NAV HIDE ON SCROLL ================= */
 
 const nav = document.querySelector(".nav");
 
 if (nav) {
 
-  let lastScroll = 0;
-
   window.addEventListener("scroll", () => {
-
-    const currentScroll = window.scrollY;
-
-    if (currentScroll > 20) {
+    if (window.scrollY > 40) {
       nav.classList.add("hide");
     } else {
       nav.classList.remove("hide");
     }
-
-    lastScroll = currentScroll;
   });
 
 }
@@ -64,12 +58,6 @@ if (burger && mobileMenu) {
     mobileMenu.classList.toggle("show");
   });
 
-  mobileMenu.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      mobileMenu.classList.remove("show");
-    });
-  });
-
   document.addEventListener("click", (e) => {
     if (!mobileMenu.contains(e.target) && !burger.contains(e.target)) {
       mobileMenu.classList.remove("show");
@@ -79,7 +67,7 @@ if (burger && mobileMenu) {
 }
 
 
-/* ================= HERO SLIDER (FASTER + SMOOTH) ================= */
+/* ================= HERO SLIDER ================= */
 
 const slides = document.querySelectorAll(".hero-slide");
 
@@ -96,7 +84,7 @@ if (slides.length > 0) {
 
     slides[current].classList.add("active");
 
-  }, 1500); // Faster transition (1.5s)
+  }, 4000);
 
 }
 
@@ -113,40 +101,13 @@ if (shareBtn) {
       try {
         await navigator.share({
           title: document.title,
-          text: "Check out I.Z. Verse Studio",
+          text: "Explore I.Z. Verse Studio",
           url: window.location.href
         });
       } catch (err) {}
     } else {
       navigator.clipboard.writeText(window.location.href);
       alert("Link copied to clipboard.");
-    }
-
-  });
-
-}
-
-
-/* ================= THEME TOGGLE ================= */
-
-const themeToggle = document.getElementById("themeToggle");
-
-if (themeToggle) {
-
-  const savedTheme = localStorage.getItem("izTheme");
-
-  if (savedTheme === "light") {
-    document.body.classList.add("light-mode");
-  }
-
-  themeToggle.addEventListener("click", () => {
-
-    document.body.classList.toggle("light-mode");
-
-    if (document.body.classList.contains("light-mode")) {
-      localStorage.setItem("izTheme", "light");
-    } else {
-      localStorage.setItem("izTheme", "dark");
     }
 
   });
@@ -182,13 +143,64 @@ window.addEventListener("click", (e) => {
   }
 });
 
-/* ================= SERVICE WORKER ================= */
 
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js")
-      .then(() => console.log("Service Worker Registered"))
-      .catch((err) => console.log("SW registration failed:", err));
+/* ================= THEME TOGGLE ================= */
+
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+
+  const savedTheme = localStorage.getItem("izTheme");
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+  }
+
+  themeToggle.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+      localStorage.setItem("izTheme", "light");
+    } else {
+      localStorage.setItem("izTheme", "dark");
+    }
+
   });
+
 }
 
+
+/* ================= SMOOTH SCROLL ================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+  anchor.addEventListener("click", function (e) {
+
+    const target = document.querySelector(this.getAttribute("href"));
+
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+  });
+
+});
+
+
+/* ================= PORTFOLIO VIDEO SAFETY ================= */
+
+const portfolioVideos = document.querySelectorAll(".portfolio-item video");
+
+portfolioVideos.forEach(video => {
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.autoplay = true;
+
+  // Attempt play (mobile compatibility)
+  video.play().catch(() => {});
+});
